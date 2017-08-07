@@ -25,7 +25,7 @@ SECRET_KEY = 'tpe_)$#28ns$hwhowu#427m=15g!+@cdyb^x@rxk=l+wlbl6%f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ntcweb.herokuapp.com']
+ALLOWED_HOSTS = ['ntcweb.herokuapp.com',u'localhost']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'ntcweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates','smchallenge/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
