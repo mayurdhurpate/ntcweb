@@ -25,7 +25,7 @@ SECRET_KEY = 'tpe_)$#28ns$hwhowu#427m=15g!+@cdyb^x@rxk=l+wlbl6%f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ntcweb.herokuapp.com']
 
 
 # Application definition
