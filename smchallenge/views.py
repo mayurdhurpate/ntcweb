@@ -11,5 +11,5 @@ def signup(request):
     return render(request, 'signup.html')
 
 def register_submit(request):
-    print request.POST['inputEmail']
+    print(request.POST['inputEmail'])
     return HttpResponse("qq")
