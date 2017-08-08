@@ -35,7 +35,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(/static/img/intro-bg.jpg) no-repeat center center;
+    background: url(/static/img/bg-image.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -167,4 +167,12 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+/*Sign Up Page */
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
 }
