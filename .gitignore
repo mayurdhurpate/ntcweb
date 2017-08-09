@@ -1,1 +1,2 @@
 ntcweb/staticfiles
+*.sqlite3
