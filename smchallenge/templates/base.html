@@ -49,17 +49,29 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about">Incentives</a>
+                        <a href="#incentives">Incentives</a>
                     </li>
                     <li>
-                        <a href="#services">Rules and Guidelines</a>
+                        <a href="#rules">Rules and Guidelines</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="/smchallenge/leaderboard/">Leaderboard</a>
+                    </li>
+                    <li>
+                        <a href="/smchallenge/dashboard/">Dashboard</a>
+                    </li>
+                    <li>
+                         <a href="/smchallenge/logout/">{{ user.first_name }} (Logout) </a>
+                    </li>
+                    {% else %}
                     <li>
                         <a href="/smchallenge/login/">Login</a>
                     </li>
                     <li>
                         <a href="/smchallenge/register/">Register</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -69,7 +81,7 @@
 
     {% block content %}
     <!-- Header -->
-    <a name="about"></a>
+    <a name="landing"></a>
     <div class="intro-header">
         <div class="container">
 
@@ -102,7 +114,7 @@
 
     <!-- Page Content -->
 
-	<a  name="services"></a>
+	<a  name="about"></a>
     <div class="content-section-a">
 
         <div class="container">
@@ -116,7 +128,7 @@
                     At The Art of Living’s Happiness Program, we teach simple, highly powerful techniques which ensure that you stay happy and charged with positivity. </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="/static/img/quote.jpg" alt="">
+                    <img class="img-responsive" src="/static/img/quote.png" alt="">
                 </div>
             </div>
 
@@ -125,7 +137,7 @@
 
     </div>
     <!-- /.content-section-a -->
-
+    <a  name="incentives"></a>
     <div class="content-section-b">
 
         <div class="container">
@@ -142,7 +154,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="/static/img/quote1.jpg" alt="">
+                    <img class="img-responsive" src="/static/img/quote1.png" alt="">
                 </div>
             </div>
 
@@ -151,7 +163,7 @@
 
     </div>
     <!-- /.content-section-b -->
-
+    <a  name="rules"></a>
     <div class="content-section-a">
 
         <div class="container">
@@ -174,7 +186,7 @@
                     
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="/static/img/quote2.jpg" alt="">
+                    <img class="img-responsive" src="/static/img/quote2.png" alt="">
                 </div>
             </div>
 
