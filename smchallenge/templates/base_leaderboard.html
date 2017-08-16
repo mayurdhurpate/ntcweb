@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block title %}Leaderboard | Anand Utsav Online Contest{% endblock %}
+
+{% block content %}
+    <!-- Signup -->
+    <div class="content-section-a">
+        <div class="container">
+        <h2>Leaderboard</h2>
+            <table class="table table-striped"> 
+                <thead> 
+                    <tr> 
+                        <th>#</th> 
+                        <th>Name</th> 
+                        <th>No. of Tasks Completed</th> 
+                        <th>Total Score</th> 
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    {% for user in userData %}
+                    <tr> 
+                        <th scope="row">{{ forloop.counter }}</th> 
+                        <td>{{user.name}}</td> 
+                        <td>{{user.taskCount}}</td> 
+                        <td>{{user.score}}</td> 
+                    </tr> 
+                    {% endfor %} 
+                </tbody> 
+            </table>
+        </div> <!-- /container -->    
+    </div>
+{% endblock %}
+
+
+{% block bodyend %}
+    <script src="/static/js/login.js"></script>
+{% endblock %}
+

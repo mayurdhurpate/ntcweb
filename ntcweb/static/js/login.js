@@ -3,14 +3,11 @@ $(document).ready(function(){
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: '/smchallenge/register-submit/',
+            url: '/smchallenge/login-submit/',
             data: $("#register_form").serialize(),
             success: function(data){
-                if(data.result==true){
-                    console.log("User Registered. Proceeding to Login!");
-                    window.location.replace("/smchallenge/login/");
-                }
-
+                if(data.result==true)
+                    alert("User Logged in. Proceed to Dashboard!")
                 console.log(data);
             }
         });

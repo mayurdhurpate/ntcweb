@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block title %}Dashboard | Anand Utsav Online Contest{% endblock %}
+
+{% block content %}
+    <!-- Signup -->
+    <div class="content-section-a" style="padding-top: 70px">
+        <div class="container">
+            <h2>Tasks:</h2>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+              {% for task in tasks %}
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading{{task.number}}">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{task.number}}" {% if forloop.first %} aria-expanded="true" {% else %} aria-expanded="false" class="collapsed" {% endif %} aria-controls="collapse{{task.number}}">
+                      #Task {{ task.number }}: {{task.title}}
+                    </a>
+                  </h4>
+                  
+                </div>
+                <div id="collapse{{task.number}}" class="panel-collapse collapse {% if forloop.first %} in {% endif %}" role="tabpanel" aria-labelledby="heading{{task.number}}">
+                  <div class="panel-body">
+                    {{task.content}}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+        </div> <!-- /container -->    
+    </div>
+{% endblock %}
+
+
+{% block bodyend %}
+    <script src="/static/js/login.js"></script>
+{% endblock %}
+

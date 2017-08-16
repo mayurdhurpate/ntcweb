@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block title %}Submit Task {{ number }} | Anand Utsav Online Contest{% endblock %}
+
+{% block content %}
+    <!-- Submit -->
+    <div class="content-section-a" style="padding-top: 70px">
+        <div class="container">
+
+          <form class="form-signin"  id="submit_form" method="post" action="/smchallenge/submit-submit/{{ number }}/">{% csrf_token %}
+            <h2 class="form-signin-heading">Submit Task {{number}}:</h2>
+            
+            <label for="inputScore" class="sr-only">Score:</label>
+            <input type="number" id="inputScore" name="inputScore" class="form-control" placeholder="Score" required>
+            
+            <label for="inputLink" class="sr-only">Post/Image Link:</label>
+            <input type="text" id="inputLink" name="inputLink" class="form-control" placeholder="Post/Image Link" required>
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Score</button>
+          </form>
+
+        </div> <!-- /container -->    
+    </div>
+{% endblock %}
+
+
+{% block bodyend %}
+    <script src="/static/js/submit.js"></script>
+{% endblock %}
+
