@@ -20,4 +20,6 @@ import smchallenge.urls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^smchallenge/', include('smchallenge.urls')),
+    url(r'^form/', include('form.urls')),
+
 ]
