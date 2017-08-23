@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block title %}Campus Coordinator Form | Anand Utsav Online Contest{% endblock %}
+
+{% block content %}
+    <!-- Signup -->
+    <div class="content-section-a">
+        <div class="container">
+
+          <form class="form-signin" id="coordinator_form" method="post" action="/form/coordinator/">{% csrf_token %}
+            <h2 class="form-coordinator-heading">Campus Coordinator</h2>
+            <label for="inputTeacherCode" class="sr-only">Teacher Code</label>
+            <input type="text" id="inputTeacherCode" name="inputTeacherCode" class="form-control" placeholder="Teacher Code" required>
+            
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          </form>
+
+        </div> <!-- /container -->    
+    </div>
+{% endblock %}
+
+
+{% block bodyend %}
+
+    <!-- <script src="/static/js/form.js"></script> -->
+{% endblock %}
+

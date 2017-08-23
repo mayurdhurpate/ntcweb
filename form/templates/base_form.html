@@ -8,14 +8,13 @@
     <div class="content-section-a">
         <div class="container">
 
-          <form class="form-signin" id="coordinator_form" method="post" action="/form/coordinator-submit/">{% csrf_token %}
+          <form class="form-signin" id="coordinator_form" method="post" action="/form/coordinator-submit/{{ teacher_code }}/">{% csrf_token %}
             <h2 class="form-coordinator-heading">Campus Coordinator</h2>
             
             {{ form.as_p }}
             
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit for Approval</button>
           </form>
-
         </div> <!-- /container -->    
     </div>
 {% endblock %}

@@ -11,17 +11,22 @@ from form.forms import InstituteForm
 
 # Create your views here.
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'base_index.html')
 
 def coordinator_form(request):
-    form = InstituteForm()
-    return render(request, 'base_form.html',{'form':form})
+    if request.method=='POST':
+        teacher_code = request.POST['inputTeacherCode']
+        coordinator = Coordinator.objects.create(teacherCode=teacher_code)
+        coordinator.save()
+        form = InstituteForm()
+        return render(request, 'base_form.html',{'form':form,'teacher_code':teacher_code})
 
-def form_submit(request):
+def form_submit(request,teacher_code):
     if request.method == 'POST':
+        coordinator = Coordinator.objects.filter(teacherCode=teacher_code)[0]
         form = InstituteForm(request.POST)
         new_institute = form.save(commit=False)
-        new_institute.coordinator = Coordinator.objects.all()[0]
+        new_institute.coordinator = coordinator
         new_institute.save()
 
-    return JsonResponse({'result':True, 'name':new_institute.name})
+        return JsonResponse({'result':True, 'teacher_code':teacher_code})

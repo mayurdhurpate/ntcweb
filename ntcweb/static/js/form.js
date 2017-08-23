@@ -8,7 +8,8 @@ $(document).ready(function(){
             data: $("#coordinator_form").serialize(),
             success: function(data){
                 if(data.result==true){
-                    console.log("College Submitted");
+                    $("#coordinator_form")[0].reset();
+                    alert("College Submitted for approval for Teacher: "+ data.teacher_code+"\nSubmit another college for your teacher code by filling above details again.");
                 }
 
                 console.log(data);
