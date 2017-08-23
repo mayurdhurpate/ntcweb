@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from form.models import *
@@ -20,6 +20,7 @@ def coordinator_form(request):
         coordinator.save()
         form = InstituteForm()
         return render(request, 'base_form.html',{'form':form,'teacher_code':teacher_code})
+    return redirect('home')
 
 def form_submit(request,teacher_code):
     if request.method == 'POST':
@@ -28,5 +29,5 @@ def form_submit(request,teacher_code):
         new_institute = form.save(commit=False)
         new_institute.coordinator = coordinator
         new_institute.save()
-
         return JsonResponse({'result':True, 'teacher_code':teacher_code})
+    return redirect('home')

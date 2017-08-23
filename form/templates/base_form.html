@@ -7,14 +7,16 @@
     <!-- Signup -->
     <div class="content-section-a">
         <div class="container">
-
-          <form class="form-signin" id="coordinator_form" method="post" action="/form/coordinator-submit/{{ teacher_code }}/">{% csrf_token %}
-            <h2 class="form-coordinator-heading">Campus Coordinator</h2>
-            
-            {{ form.as_p }}
-            
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit for Approval</button>
-          </form>
+            <div class="col-md-6 col-md-offset-3" style="display: block;">
+              <form  id="coordinator_form" class="form-horizontal" method="post" action="/form/coordinator-submit/{{ teacher_code }}/">{% csrf_token %}
+                <!-- <h3>{{ teacher_code }}</h3> -->
+                <h2 class="form-coordinator-heading">You are a Campus Coordinator for:</h2>
+                
+                {{ form.as_p }}
+                
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit for Approval</button>
+              </form>
+            </div>    
         </div> <!-- /container -->    
     </div>
 {% endblock %}

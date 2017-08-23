@@ -17,8 +17,10 @@ class Institute(models.Model):
     district = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     course = models.BooleanField()
+    course_id = models.CharField(max_length=100)
     talk = models.BooleanField()
     venue = models.BooleanField()
+    mou = models.BooleanField()
     other = models.TextField(blank=True)
     def __unicode__(self):
         return u"%s" % self.name
